@@ -1,0 +1,22 @@
+.btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #007bff;
+  text-align: center;
+  color: #007bff;
+  line-height: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.5s all;
+  &:hover {
+    color: white;
+    background-color: #007bff;
+  }
+  &:disabled {
+    color: white;
+    background-color: gray;
+  }
+}

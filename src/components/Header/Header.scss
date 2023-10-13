@@ -1,0 +1,42 @@
+header {
+  padding: 1rem;
+  position: relative;
+  width: auto;
+  background-color: #0d253f;
+  color: white;
+  img {
+    height: 15px;
+    @media screen and (min-width: 576px) {
+      height: 24px;
+    }
+  }
+  ul {
+    list-style: none;
+    gap: 1rem;
+    padding-left: 0;
+    li {
+      a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        &::before {
+          content: '';
+          width: 0;
+          height: 2px;
+          background-color: red;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          transition: 0.5s all ease;
+        }
+        &:hover,
+        &.active {
+          font-weight: 700;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

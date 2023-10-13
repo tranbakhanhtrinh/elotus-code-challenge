@@ -1,0 +1,25 @@
+.movie-card {
+  width: 46.5%;
+  figure,
+  h4,
+  p {
+    margin: 0 0 0.5rem 0;
+  }
+  figure {
+    img {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 576px) and (max-width: 991.98px) {
+    width: 31.3%;
+  }
+  @media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    width: 228px;
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+    width: 215px;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 251px;
+  }
+}

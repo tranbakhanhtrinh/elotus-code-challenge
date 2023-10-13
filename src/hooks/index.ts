@@ -1,0 +1,5 @@
+export { useFetchNowPlaying } from '@/hooks/useFetchNowPlaying'
+export { useFetchPoster } from '@/hooks/useFetchPoster'
+export { useFetchTopRated } from '@/hooks/useFetchTopRated'
+export { useFetchSearch } from '@/hooks/useFetchSearch'
+export { useFetchMovieDetails } from '@/hooks/useFetchMovieDetails'
