@@ -1,10 +1,9 @@
-import Button from "@/components/Button"
 import Loading from "@/components/Loading"
 import MovieCard from "@/components/MovieCard"
+import Pagination from "@/components/Pagination"
 import { useFetchNowPlaying } from "@/hooks"
 import ErrorPage from "@/pages/ErrorPage"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
 
 const NowPlaying = () => {
   const [pageNumber, setPageNumber] = useState<number>(1)
@@ -24,11 +23,8 @@ const NowPlaying = () => {
       releaseDate={result.release_date}
     />
   ))
-  const prevBtn = () => {
-    setPageNumber(page => page - 1)
-  }
-  const nextBtn = () => {
-    setPageNumber(page => page + 1)
+  const changePageNumber = (page: number) => {
+    setPageNumber(page)
   }
   return (
     <section className="p-1">
@@ -37,12 +33,11 @@ const NowPlaying = () => {
           {nowPlayingMovies}
         </div>
         <div className="flex items-center justify-center gap-1 mt-1">
-          <Button type="button" onClick={prevBtn} disabled={pageNumber === 1}>
-            Prev
-          </Button>
-          <Button type="button" onClick={nextBtn} disabled={pageNumber === movieList.length}>
-            Next
-          </Button>
+          <Pagination
+            pageLength={movieList.total_pages}
+            pageNumber={pageNumber}
+            setPageNumber={changePageNumber}
+          />
         </div>
       </div>
     </section>

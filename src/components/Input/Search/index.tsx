@@ -1,5 +1,6 @@
-import { ChangeEventHandler, MouseEventHandler } from "react"
 import searchIcon from '@/assets/images/search-icon.svg'
+import { ChangeEventHandler } from "react"
+import Input from "../Input"
 import './Search.scss'
 
 type Props = {
@@ -13,8 +14,7 @@ type Props = {
 const SearchInput = ({ onChange, onSubmit, value, placeholder, otherProps }: Props) => {
   return (
     <form onSubmit={onSubmit} className='search-input'>
-      <label htmlFor="search"></label>
-      <input type='search' id='search' placeholder={placeholder} value={value} onChange={onChange}  {...otherProps} />
+      <Input type='search' id='search' placeholder={placeholder} value={value} onChange={onChange}  {...otherProps} />
       <figure>
         <img src={searchIcon} alt="searchIcon" />
       </figure>
